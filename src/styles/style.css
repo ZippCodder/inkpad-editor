@@ -32,13 +32,8 @@ canvas {
 }
 
 .logo {
-    border: 7px solid white;
-    width: 1em;
-    height: 1em;
-    border-radius: 10px;
-    border-left-color: #2ecc71;
-    outline: 2px solid #2ecc71;
-    box-shadow: 0px 0px 20px #2ecc71;
+    width: 2.5em;
+    height: 2.5em;
     top: 1.5em;
     left: 1.5em;
     position: absolute;
@@ -49,27 +44,19 @@ canvas {
     position: static;
     top: none;
     left: none;
-    box-shadow: 0px 0px 20px #2ecc71;
-    animation: glow 2s linear infinite;
-    transform: scale(1.2);
+    animation: pulse 2s linear infinite;
 }
 
-@keyframes glow {
-    0% {
-        box-shadow: 0px 0px 20px #2ecc71;
-    }
-
-    10% {
-        box-shadow: 0px 0px 18px #2ecc71;
-    }
-
-    50% {
-        box-shadow: 0px 0px 5px #2ecc71;
-    }
-
-    100% {
-        box-shadow: 0px 0px 20px #2ecc71;
-    }
+@keyframes pulse {
+   0% {
+    transform: scale(1);
+   }
+   50% {
+    transform: scale(0.9);
+   }
+   100% {
+    transform: scale(1);
+   }
 }
 
 .loader {
@@ -107,15 +94,10 @@ canvas {
 }
 
 .loader__spinner {
-    border: 7px solid white;
-    width: 1em;
-    height: 1em;
-    border-radius: 10px;
-    border-left-color: #2ecc71;
+    width: 2.5em;
+    height: 2.5em;
     animation: spin 2s infinite;
     margin-top: 30vh;
-    outline: 2px solid #2ecc71;
-    box-shadow: 0px 0px 20px #2ecc71;
 }
 
 .loader h6 {
@@ -383,6 +365,7 @@ canvas {
     user-select: none;
     line-height: 3em;
     border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 20px black;
 }
 
 .info::before {
@@ -561,6 +544,7 @@ canvas {
     background: rgba(0, 0, 0, 0.6);
     padding-bottom: 1em;
     border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 20px black;
 }
 
 .swatches__colors__swatch {
@@ -584,6 +568,7 @@ canvas {
     white-space: nowrap;
     margin: 1em;
     border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 20px black;
 }
 
 .pen::before {
@@ -747,6 +732,8 @@ canvas {
     box-sizing: content-box;
     position: relative;
     border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+    border: 1px solid #2ecc71;
+    box-shadow: 0px 0px 20px black;
 }
 
 .modal-content * {
@@ -912,9 +899,9 @@ canvas {
 }
 
 .signature {
+ z-index: 4;
  display: block; 
  position: absolute; 
- z-index: 3;
  font-size: 0.8em; 
  white-space: nowrap; 
  font-family: "Ubuntu", sans-serif;
