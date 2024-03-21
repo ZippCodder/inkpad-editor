@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- One of the following themes -->
+    <title>Inkpad | Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" /> <!-- 'nano' theme -->
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="icon" href="/public/images/favicon.png" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+</head>
+
+<body>
+    <div class="loader">
+        <div>
+            <h1 class="loader__title">INKPAD 2.0</h1>
+            <h1 class="loader__shadow">INKPAD 2.0</h1>
+            <h6>By <b>Deon Rich</b></h6>
+        </div>
+        <div class="loader__spinner"></div>
+    </div>
+
+  <div class="container">
+    <div class="logo"></div>
+
+    <div class="modal document">
+        <div class="modal-content document__content">
+            <i id="document-modal-exit" class="fas fa-times download__content__exit modal-exit"></i>
+            <h1>New Document</h1>
+            <div class="document__info">
+                <div class="document-logo logo"></div></br><input id="document-title" value="Untitled Artwork"></input></br></br>
+                <div class="document__dimensions">
+                    <input type="number" id="document-width" min="50" max="5000" value="500"></input>x<input type="number" id="document-height" min="50" max="5000" value="500"></input>
+                </div>
+            </div>
+            <a id="create-document" class="modal-button" download>Create</a>
+        </div>
+    </div>
+
+    <div class="modal download">
+        <div class="modal-content download__content">
+            <i class="fas fa-times download__content__exit modal-exit" id="save-modal-exit"></i>
+            <h1>Save</h1>
+            <select id="type">
+                <option>JPG - Full background</option>
+                <option>PNG - Transparent background</option>
+            </select>
+            <a id="save-button" class="modal-button" download>Download <i class="fas fa-download"></i></a>
+        </div>
+    </div>
+
+    <div class="color">
+        <div class="pickr"></div>
+        <p class="color__code"></p>
+    </div>
+
+    <button class="tool dropper">
+        <i class="fas fa-eye-dropper"></i>
+    </button>
+
+    <button class="tool eraser">
+        <i class="fas fa-eraser"></i>
+    </button>
+
+    <button class="tool save">
+        <i class="fas fa-save"></i>
+    </button>
+
+    <button class="tool shapes">
+        <i class="fas fa-shapes"></i>
+    </button>
+
+    <button class="tool move">
+        <i class="fas fa-arrows-alt"></i>
+    </button>
+
+    <button class="tool undo">
+        <i class="fas fa-undo"></i>
+    </button>
+
+    <button class="tool redo">
+        <i class="fas fa-redo"></i>
+    </button>
+
+    <button class="tool tools" id="tools">
+        <i class="fas fa-tools"></i>
+    </button>
+
+    <div class="info">
+        <button class="modal-button" id="new-document"><i class="fas fa-file"></i></button><input id="info-title" value="Untitled Artwork"></input>
+    </div>
+
+    <div class="swatches">
+        <button class="swatches__add"><i class="fas fa-plus"></i></button>
+        <div class="swatches__colors">
+        </div>
+    </div>
+
+    <div class="pen">
+     <div class="pen__sizes">
+      <div class="pen__size" data-size="50"></div>
+      <div class="pen__size" data-size="25"></div>
+      <div class="pen__size" data-size="10"></div>
+      <div class="pen__size pen__size--selected" data-size="5"></div>
+      <div class="pen__size" data-size="2"></div>
+     </div>   
+     <input id="pen-input" type="number" value="5" min="0.5" max="150"></input>
+    </div>
+
+    <div class="shapes__options">
+        <p>shapes</p>
+        <button class="square shape">
+            <i class="fas fa-square"></i>
+        </button>
+        <button class="circle shape">
+            <i class="fas fa-circle"></i>
+        </button>
+        <button class="line shape">
+            <i class="fas fa-line"></i>
+        </button>
+    </div>
+
+    <div class="signature">
+     <a href="https://github.com/ZippCodder" target="blank"><p>By <i>Deon Rich</i></p><i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="keystrokes">
+        <div class="keystroke">
+         <h5>Ctrl + Z</h5>
+         <small>Undo</small>
+        </div><div class="keystroke">
+         <h5>Ctrl + X</h5>
+         <small>Redo</small>
+        </div><div class="keystroke">
+         <h5>"+"</h5>
+         <small>Zoom In</small>
+        </div><div class="keystroke">
+         <h5>"-"</h5>
+         <small>Zoom Out</small>
+        </div>
+    </div>
+
+    <i class="fas fa-expand-alt mini-button" id="fullscreen"></i>
+    <i class="fas fa-search-plus mini-button" id="zoom-in"></i>
+    <i class="fas fa-search-minus mini-button" id="zoom-out"></i>
+ </div>
+    <canvas id="area"></canvas>
+</body>
+<script type="text/javascript" src="/dist/main.js"></script>
+<script src="https://kit.fontawesome.com/52e3142fe2.js" crossorigin="anonymous"></script>
+
+</html>
