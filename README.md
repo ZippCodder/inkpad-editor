@@ -12,7 +12,7 @@ A fun and easy going art program build with the HTML Canvas API, Good for doodli
 ## Built With
 * HTML, CSS and Javascript
 * HTML Canvas API
-* [Pickr](https://github.com/simonwep/pickr) API for color selection
+* [Pickr API](https://github.com/simonwep/pickr) for color selection
 * NodeJS
 * PostCSS
 * Babel
