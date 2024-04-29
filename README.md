@@ -1,6 +1,6 @@
 # Inkpad Editor
 
-A fun and easy going art program build with the HTML Canvas API, Good for doodling and whipping-up quick personal art peices and designs.
+A fun and easy going art program, good for doodling and whipping-up quick personal art peices and designs.
 
 ## Features
 - Mobile and desktop support
