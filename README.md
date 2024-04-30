@@ -1,5 +1,4 @@
 # Inkpad Editor
-
 A fun and easy going art program, good for doodling and whipping-up quick personal art peices and designs.
 
 ## Features
