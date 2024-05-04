@@ -1,4 +1,4 @@
-# Inkpad Editor
+# Inkpad Editor - Digital Art Program
 A fun and easy going art program, good for doodling and whipping-up quick personal art peices and designs.
 
 ## Features
@@ -10,8 +10,6 @@ A fun and easy going art program, good for doodling and whipping-up quick person
 
 ## Built With
 * HTML, CSS and Javascript
-* HTML Canvas API
-* [Pickr API](https://github.com/simonwep/pickr) for color selection
 * NodeJS
 * PostCSS
 * Babel
