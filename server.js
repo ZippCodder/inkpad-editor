@@ -7,6 +7,20 @@ const server = http.createServer();
 server.on("request",(req,res) => {
  let contentType = "text/plain", file;
 
+ if (req.url === "/") {
+ try {
+  file = fs.readFileSync(__dirname + "/src/pages/index.html");
+ } catch (err) {
+  console.log(err);
+ }
+
+ res.setHeader("Content-Type", "text/html");
+ res.statusCode = 200;
+ res.end(file);
+ 
+ return; 
+ }
+
  switch (path.parse(req.url).ext) {
   case ".html": {
    contentType = "text/html";
@@ -36,7 +50,7 @@ server.on("request",(req,res) => {
  res.end(file);
 });
 
-server.listen(5000,function() {
+server.listen(process.env.PORT || 80,function() {
  console.log("Server is active...");
 });
 
