@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const protocol = (process.env.MODE === "development") ? http:https;
-const server = protocol.createServer((process.env.MODE === "production") ? {key: process.env.KEY_PATH, cert: process.env.CERT_PATH}:undefined);
+const server = protocol.createServer((process.env.MODE === "production") ? {key: fs.readFileSync(process.env.KEY_PATH), cert: fs.readFileSync(process.env.CERT_PATH)}:undefined);
 
 server.on("request",(req,res) => {
  let contentType = "text/plain", file;
