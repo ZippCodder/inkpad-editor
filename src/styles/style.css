@@ -125,7 +125,7 @@ canvas {
 
 .size-controls i {
     color: rgba(0, 0, 0, 0.7);
-    font-size: 0.5em;
+    font-size: 0.7em;
     z-index: 3;
     padding: 0.5em;
     margin: 0.2em; 
@@ -596,7 +596,7 @@ canvas {
 }
 
 .pen::after {
-    content: "Add current color to palette";
+    content: "Select pen size";
     color: white;
     font-family: "Ubuntu", sans-serif;
     background: rgba(0, 0, 0, 0.8);
