@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "PORT=5000 MODE=development node server.js",
-    "start:prod": "PORT=443 MODE=production node server.js",
+    "start:prod": "KEY_PATH='../inkpad.imdeonrich.com.cert/private.key' CERT_PATH='../inkpad.imdeonrich.com.cert/certificate.crt' PORT=443 MODE=production node server.js",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
